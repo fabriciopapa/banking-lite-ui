@@ -20,6 +20,9 @@ var MenuComponentExtended = (function (_super) {
     function MenuComponentExtended() {
         return _super.call(this) || this;
     }
+    MenuComponentExtended.prototype.haceAlgo = function () {
+        console.log("Invocación en MenuComponentExtended");
+    };
     return MenuComponentExtended;
 }(menu_component_1.MenuComponent));
 MenuComponentExtended = __decorate([

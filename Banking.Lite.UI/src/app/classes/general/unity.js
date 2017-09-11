@@ -13,7 +13,7 @@ if (!registry) {
 }
 function registerType(name, component) {
     registry.set(name, component);
-    return component;
+    return name;
 }
 exports.registerType = registerType;
 function getRegisteredType(name) {

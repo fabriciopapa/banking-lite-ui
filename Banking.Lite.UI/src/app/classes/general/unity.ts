@@ -15,7 +15,7 @@ if (!registry) {
 
 export function registerType(name: string, component: any): any {
     registry.set(name, component);
-    return component;
+    return name;
 }
 
 export function getRegisteredType(name: string): any {

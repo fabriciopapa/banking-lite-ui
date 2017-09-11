@@ -12,4 +12,8 @@ export class MenuComponentExtended extends MenuComponent  {
   constructor() {
     super();
   }
+
+  public haceAlgo(): void {
+    console.log("Invocación en MenuComponentExtended");
+  }
 }

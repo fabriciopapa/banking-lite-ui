@@ -6,25 +6,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var unity_1 = require("../classes/general/unity");
+// import { registerType, getRegisteredType } from '../classes/general/unity';
 var menu_component_1 = require("./menu/menu_component");
 var menu_component_extended_1 = require("./menu/menu_component_extended");
+var registry = new Map();
+if (!window.icb) {
+    window.icb = {
+        unity: {}
+    };
+}
+if (!registry) {
+    if (!window.icb.unity.unityRegistry) {
+        window.icb.unity.unityRegistry = new Map();
+    }
+    registry = window.icb.unity.unityRegistry;
+}
+function registerType(name, component) {
+    registry.set(name, component);
+}
+function getRegisteredType(name) {
+    return registry.get(name);
+}
+registerType("components.menu.menu_component", menu_component_1.MenuComponent);
+registerType("components.menu.menu_component", menu_component_extended_1.MenuComponentExtended);
 var ComponentsModule = (function () {
     function ComponentsModule() {
     }
     return ComponentsModule;
 }());
 ComponentsModule = __decorate([
-    unity_1.registerType("components.menu.menu_component", menu_component_1.MenuComponent),
-    unity_1.registerType("components.menu.menu_component", menu_component_extended_1.MenuComponentExtended),
     core_1.NgModule({
         declarations: [
-            // getRegisteredType("components.menu.menu_component")
-            menu_component_1.MenuComponent
+            getRegisteredType("components.menu.menu_component")
         ],
         exports: [
-            // getRegisteredType("components.menu.menu_component")
-            menu_component_1.MenuComponent
+            getRegisteredType("components.menu.menu_component")
         ]
     })
 ], ComponentsModule);
