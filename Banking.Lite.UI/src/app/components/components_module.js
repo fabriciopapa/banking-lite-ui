@@ -6,18 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var menu_component_1 = require("./menu/menu.component");
-var menu_component_extended_1 = require("./menu/menu.component.extended");
+var unity_1 = require("../classes/general/unity");
+var menu_component_1 = require("./menu/menu_component");
+var menu_component_extended_1 = require("./menu/menu_component_extended");
 var ComponentsModule = (function () {
     function ComponentsModule() {
     }
     return ComponentsModule;
 }());
 ComponentsModule = __decorate([
+    unity_1.registerType("components.menu.menu_component", menu_component_1.MenuComponent),
+    unity_1.registerType("components.menu.menu_component", menu_component_extended_1.MenuComponentExtended),
     core_1.NgModule({
-        declarations: [menu_component_1.MenuComponent, menu_component_extended_1.MenuComponentExtended],
-        exports: [menu_component_1.MenuComponent, menu_component_extended_1.MenuComponentExtended]
+        declarations: [
+            // getRegisteredType("components.menu.menu_component")
+            menu_component_1.MenuComponent
+        ],
+        exports: [
+            // getRegisteredType("components.menu.menu_component")
+            menu_component_1.MenuComponent
+        ]
     })
 ], ComponentsModule);
 exports.ComponentsModule = ComponentsModule;
-//# sourceMappingURL=components.module.js.map
+//# sourceMappingURL=components_module.js.map

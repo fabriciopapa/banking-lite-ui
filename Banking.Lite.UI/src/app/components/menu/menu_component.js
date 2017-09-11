@@ -9,18 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
+var MenuComponent = (function () {
+    function MenuComponent() {
+        this.haceAlgo();
     }
-    return AppComponent;
+    MenuComponent.prototype.haceAlgo = function () {
+        console.log("Invocación en MenuComponent");
+    };
+    return MenuComponent;
 }());
-AppComponent = __decorate([
+MenuComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: "./app.component.html",
-        styleUrls: ["./app.component.css"]
+        selector: 'lt-menu',
+        templateUrl: "./menu_component.html",
+        styleUrls: ["./menu_component.css"]
     }),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], MenuComponent);
+exports.MenuComponent = MenuComponent;
+//# sourceMappingURL=menu_component.js.map

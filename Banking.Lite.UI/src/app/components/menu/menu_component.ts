@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'lt-menu',
-  templateUrl: "./menu.component.html",
-  styleUrls: ["./menu.component.css"]
+  templateUrl: "./menu_component.html",
+  styleUrls: ["./menu_component.css"]
 })
 
-export class MenuComponent  { 
+export class MenuComponent { 
 
   constructor() {
     this.haceAlgo();
   }
 
-  protected haceAlgo(): void {
+  public haceAlgo(): void {
     console.log("Invocación en MenuComponent");
   }
 }

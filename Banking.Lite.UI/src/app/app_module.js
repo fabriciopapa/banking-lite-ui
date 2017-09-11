@@ -7,8 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
-var app_component_1 = require("./app.component");
-var components_module_1 = require("./components/components.module");
+var app_component_1 = require("./app_component");
+var components_module_1 = require("./components/components_module");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,4 +22,4 @@ AppModule = __decorate([
     })
 ], AppModule);
 exports.AppModule = AppModule;
-//# sourceMappingURL=app.module.js.map
+//# sourceMappingURL=app_module.js.map
