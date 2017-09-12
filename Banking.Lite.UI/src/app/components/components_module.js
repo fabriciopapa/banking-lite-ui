@@ -6,29 +6,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-// import { registerType, getRegisteredType } from '../classes/general/unity';
+var platform_browser_1 = require("@angular/platform-browser");
+var common_1 = require("@angular/common");
+var unity_1 = require("../classes/general/unity");
+var menu_button_component_1 = require("./menu_button/menu_button_component");
 var menu_component_1 = require("./menu/menu_component");
-var menu_component_extended_1 = require("./menu/menu_component_extended");
-var registry = new Map();
-if (!window.icb) {
-    window.icb = {
-        unity: {}
-    };
-}
-if (!registry) {
-    if (!window.icb.unity.unityRegistry) {
-        window.icb.unity.unityRegistry = new Map();
-    }
-    registry = window.icb.unity.unityRegistry;
-}
-function registerType(name, component) {
-    registry.set(name, component);
-}
-function getRegisteredType(name) {
-    return registry.get(name);
-}
-registerType("components.menu.menu_component", menu_component_1.MenuComponent);
-registerType("components.menu.menu_component", menu_component_extended_1.MenuComponentExtended);
+unity_1.registerType("components.menu_button.menu_button_component", menu_button_component_1.MenuButtonComponent);
+unity_1.registerType("components.menu.menu_component", menu_component_1.MenuComponent);
 var ComponentsModule = (function () {
     function ComponentsModule() {
     }
@@ -36,11 +20,14 @@ var ComponentsModule = (function () {
 }());
 ComponentsModule = __decorate([
     core_1.NgModule({
+        imports: [platform_browser_1.BrowserModule, common_1.CommonModule],
         declarations: [
-            getRegisteredType("components.menu.menu_component")
+            unity_1.getRegisteredType("components.menu_button.menu_button_component"),
+            unity_1.getRegisteredType("components.menu.menu_component")
         ],
         exports: [
-            getRegisteredType("components.menu.menu_component")
+            unity_1.getRegisteredType("components.menu_button.menu_button_component"),
+            unity_1.getRegisteredType("components.menu.menu_component")
         ]
     })
 ], ComponentsModule);

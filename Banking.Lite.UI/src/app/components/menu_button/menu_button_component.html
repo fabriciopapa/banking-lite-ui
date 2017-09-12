@@ -1,0 +1,7 @@
+<input *ngIf="menuOpenButton" type="checkbox" class="menu-open-checkbox" name="menu-open-checkbox" id="menu-open-checkbox"/>
+<label *ngIf="menuOpenButton" class="menu-open-button" (click)="clickMainButtonHandler($event)" for="menu-open-checkbox">
+    <i [ngClass]="menuOpenButton.icon"></i>
+</label>
+<a *ngFor="let item of menuItems" class="menu-item" (click)="clickButtonItemHandler(item)">
+    <i [ngClass]="item.icon"></i> 
+</a>

@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
+var common_1 = require("@angular/common");
 var app_component_1 = require("./app_component");
 var components_module_1 = require("./components/components_module");
 var AppModule = (function () {
@@ -16,7 +17,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, components_module_1.ComponentsModule],
+        imports: [platform_browser_1.BrowserModule, common_1.CommonModule, components_module_1.ComponentsModule],
         declarations: [app_component_1.AppComponent],
         bootstrap: [app_component_1.AppComponent]
     })

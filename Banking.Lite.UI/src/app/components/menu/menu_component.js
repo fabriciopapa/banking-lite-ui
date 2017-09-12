@@ -11,16 +11,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var MenuComponent = (function () {
     function MenuComponent() {
-        this.haceAlgo();
+        this._menuOpenButton = {};
+        this._menuItems = [];
+        this.loadMenuOpenButton();
+        this.loadMenuItems();
     }
-    MenuComponent.prototype.haceAlgo = function () {
-        console.log("Invocación en MenuComponent");
+    Object.defineProperty(MenuComponent.prototype, "menuOpenButton", {
+        get: function () { return this._menuOpenButton; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MenuComponent.prototype, "menuItems", {
+        get: function () { return this._menuItems; },
+        enumerable: true,
+        configurable: true
+    });
+    MenuComponent.prototype.loadMenuOpenButton = function () {
+        this._menuOpenButton = { icon: "fa fa-shower" };
+    };
+    MenuComponent.prototype.loadMenuItems = function () {
+        this._menuItems.push({ icon: "fa fa-bar-chart" });
+        this._menuItems.push({ icon: "fa fa-plus" });
+        this._menuItems.push({ icon: "fa fa-heart" });
+        this._menuItems.push({ icon: "fa fa-envelope" });
+        this._menuItems.push({ icon: "fa fa-cog" });
+        this._menuItems.push({ icon: "fa fa-ellipsis-h" });
     };
     return MenuComponent;
 }());
 MenuComponent = __decorate([
     core_1.Component({
         selector: 'lt-menu',
+        changeDetection: core_1.ChangeDetectionStrategy.OnPush,
         templateUrl: "./menu_component.html",
         styleUrls: ["./menu_component.css"]
     }),

@@ -1,45 +1,24 @@
 import { NgModule } from '@angular/core';
-// import { registerType, getRegisteredType } from '../classes/general/unity';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common'
+import { registerType, getRegisteredType } from '../classes/general/unity';
+import { MenuButtonComponent }  from './menu_button/menu_button_component';
 import { MenuComponent }  from './menu/menu_component';
-import { MenuComponentExtended }  from './menu/menu_component_extended';
 
-var registry = new Map<string, any>();
-
-if (!window.icb) {
-    window.icb = {
-        unity: {}
-    };
-}
-
-if (!registry) {
-    if (!window.icb.unity.unityRegistry) {
-        window.icb.unity.unityRegistry = new Map<string, any>();
-    }
-    registry = window.icb.unity.unityRegistry;
-}
-
-function registerType(name: string, component: any) {
-    registry.set(name, component);
-}
-
-function getRegisteredType(name: string): any {
-    return registry.get(name);
-}
-
-registerType("components.menu.menu_component", MenuComponent)
-registerType("components.menu.menu_component", MenuComponentExtended)
+registerType("components.menu_button.menu_button_component", MenuButtonComponent);
+registerType("components.menu.menu_component", MenuComponent);
 
 @NgModule({
-  declarations: [
-    getRegisteredType("components.menu.menu_component")
-    // MenuComponentExtended
-  ],
-  exports: [
-    getRegisteredType("components.menu.menu_component")
-    // MenuComponentExtended 
-  ]
+    imports: [ BrowserModule, CommonModule ],
+    declarations: [
+        getRegisteredType("components.menu_button.menu_button_component"),
+        getRegisteredType("components.menu.menu_component")
+    ],
+    exports: [
+        getRegisteredType("components.menu_button.menu_button_component"),
+        getRegisteredType("components.menu.menu_component")
+    ]
 })
 
-export class ComponentsModule { 
-  
+export class ComponentsModule {
 }
