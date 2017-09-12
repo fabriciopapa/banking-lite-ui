@@ -11,7 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var MenuButtonComponent = (function () {
     function MenuButtonComponent() {
+        this._menuOpenButtonClass = "menu-open-button-flower";
+        this._menuItemClass = "menu-item";
     }
+    Object.defineProperty(MenuButtonComponent.prototype, "menuOpenButtonClass", {
+        get: function () { return this._menuOpenButtonClass; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MenuButtonComponent.prototype, "menuItemClass", {
+        get: function () { return this._menuItemClass; },
+        enumerable: true,
+        configurable: true
+    });
     Object.defineProperty(MenuButtonComponent.prototype, "menuOpenButton", {
         get: function () { return this._menuOpenButton; },
         set: function (value) { this._menuOpenButton = value; },
@@ -24,11 +36,12 @@ var MenuButtonComponent = (function () {
         enumerable: true,
         configurable: true
     });
-    MenuButtonComponent.prototype.clickMainButtonHandler = function (event) {
-        console.log('eoeo');
+    MenuButtonComponent.prototype.clickOpenButtonHandler = function (event) {
+        this._menuOpenButtonClass = "menu-open-button-flower";
+        // var ea = this._menuOpenButtonRef.nativeElement;
     };
-    MenuButtonComponent.prototype.clickButtonItemHandler = function (item) {
-        console.log('eaea');
+    MenuButtonComponent.prototype.clickMenuItemHandler = function (item) {
+        this._menuOpenButtonClass = "menu-open-button-row";
     };
     return MenuButtonComponent;
 }());

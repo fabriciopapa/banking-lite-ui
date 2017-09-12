@@ -1,4 +1,4 @@
-import { Component, Input, Output, ViewChildren, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, Output, ViewChildren, ViewChild, ChangeDetectionStrategy, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'lt-menu-button',
@@ -11,6 +11,11 @@ export class MenuButtonComponent {
 
     protected _menuOpenButton: any;
     protected _menuItems: any;
+    protected _menuOpenButtonClass: string = "menu-open-button-flower";
+    protected _menuItemClass: string = "menu-item";
+
+    get menuOpenButtonClass(): string { return this._menuOpenButtonClass; }
+    get menuItemClass(): string { return this._menuItemClass; }
 
     @Input("menuOpenButton")
     get menuOpenButton():any { return this._menuOpenButton; }
@@ -23,11 +28,12 @@ export class MenuButtonComponent {
     constructor() {
     }
 
-    protected clickMainButtonHandler(event: any) {
-        console.log('eoeo');
+    protected clickOpenButtonHandler(event: any) {
+        this._menuOpenButtonClass = "menu-open-button-flower";
+        // var ea = this._menuOpenButtonRef.nativeElement;
     }
 
-    protected clickButtonItemHandler(item: any) {
-        console.log('eaea');
+    protected clickMenuItemHandler(item: any) {
+        this._menuOpenButtonClass = "menu-open-button-row";
     }
 }
