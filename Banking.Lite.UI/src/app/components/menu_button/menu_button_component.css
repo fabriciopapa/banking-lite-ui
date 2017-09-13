@@ -1,8 +1,10 @@
+
 .menu-open-checkbox {
   display: none;
 }
 
 .menu-open-button-flower {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #3498DB;
 	border-bottom: 5px solid #2980B9;
   border-radius: 100%;
@@ -11,7 +13,7 @@
   position: absolute;
   text-align: center;
   line-height: 90px;
-  transition-duration: 100ms;
+  transition-duration: 50ms;
   z-index: 2;
   cursor: pointer;
   top:50%;
@@ -24,6 +26,7 @@
 }
 
 .menu-open-button-flower:active {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   transform: translate3d(0, 0, 5);
   -webkit-transform: translate(0px,5px);
 	border-bottom: 1px solid #2980B9;
@@ -31,6 +34,7 @@
 }
 
 .menu-open-button-row {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #3498DB;
 	border-bottom: 5px solid #2980B9;
   border-radius: 100%;
@@ -39,7 +43,7 @@
   position: absolute;
   text-align: center;
   line-height: 80px;
-  transition-duration: 100ms;
+  transition-duration: 300ms;
   z-index: 2;
   cursor: pointer;
   top:0;
@@ -52,13 +56,15 @@
 }
 
 .menu-open-button-row:active {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   transform: translate3d(0, 0, 5);
-  -webkit-transform: translate(0px,5px);
+  -webkit-transform: translate(0px, 5px);
 	border-bottom: 1px solid #2980B9;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
 }
 
 .menu-item-flower {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #3498DB;
 	border-bottom:2px solid #2980B9;
   border-radius: 100%;
@@ -76,9 +82,12 @@
   margin-top:-40px;
   margin-left:-40px;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .menu-item-row {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #3498DB;
 	border-bottom:2px solid #2980B9;
   border-radius: 100%;
@@ -87,15 +96,21 @@
   position: absolute;
   text-align: center;
   line-height: 70px;
-  transition: transform ease-out 200ms;
+  transition: transform ease-out 300ms;
   cursor: pointer;
   top:0;
   bottom: 0;
   left: 0;
   right: 0;
-  margin-top:12px;
-  margin-left:12px;
+  margin-top:15px;
+  margin-left:15px;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
+  animation-duration: 0.1s;
+  animation-delay: 0.1s;
+}
+
+.menu-item-row-hidden {
+  display: none;
 }
 
 .menu-open-checkbox:checked ~ .menu-open-button-flower ~ .menu-item-flower:nth-child(3) {
@@ -117,7 +132,7 @@
 
 .menu-open-checkbox:checked ~ .menu-open-button-flower ~ .menu-item-flower:nth-child(4):active {
   transition-duration: 50ms;
-    transform: translate3d(86.61581px, -47.97701px, 0) !important;
+  transform: translate3d(86.61581px, -47.97701px, 0) !important;
   border-bottom: 1px solid #2980B9;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
 }
@@ -170,30 +185,99 @@
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
 }
 
-.menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(3) {
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transform: translate3d(110px, 0, 0);
-  transform: translate3d(110px, 0, 0);
+@media screen and (orientation:portrait) {
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(3) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0px, 85px, 0);
+    transform: translate3d(0px, 85px, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(4) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0, 160px, 0);
+    transform: translate3d(0, 160px, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(5) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0, 235px, 0);
+    transform: translate3d(0, 235px, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(6) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0, 310px, 0);
+    transform: translate3d(0, 310px, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(7) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0, 385px, 0);
+    transform: translate3d(0, 385px, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(8) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0, 460px, 0);
+    transform: translate3d(0, 460px, 0);
+  }
 }
 
-.menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(4) {
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transform: translate3d(220px, 0, 0);
-  transform: translate3d(220px, 0, 0);
-}
+@media screen and (orientation:landscape) {
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(3) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(80px, 0, 0);
+    transform: translate3d(80px, 0, 0);
+  }
 
-.menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(5) {
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transform: translate3d(330px, 0, 0);
-  transform: translate3d(330px, 0, 0);
-}
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(4) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(155px, 0, 0);
+    transform: translate3d(155px, 0, 0);
+  }
 
-.menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(6) {
-  -webkit-transition-duration: 200ms;
-  transition-duration: 200ms;
-  -webkit-transform: translate3d(440px, 0, 0);
-  transform: translate3d(440px, 0, 0);
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(5) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(230px, 0, 0);
+    transform: translate3d(230px, 0, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(6) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(305px, 0, 0);
+    transform: translate3d(305px, 0, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(7) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(380px, 0, 0);
+    transform: translate3d(380px, 0, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(8) {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(455px, 0, 0);
+    transform: translate3d(455px, 0, 0);
+  }
+
+  .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(8):active {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transform: translate3d(0, 460px, 0);
+    transform: translate3d(0, 460px, 0);
+    border-bottom: 1px solid #2980B9;
+    box-shadow: 0.5px 0.5px 0.5px #2980B9;
+  }
 }

@@ -42,17 +42,27 @@ export class MenuButtonComponent {
     }
 
     protected clickMenuItemHandler(item: any) {
+        this._menuOpenButtonValue = false;
         this.setClassesByMode(MenuOpenButtonMode.row);
     }
 
     protected setClassesByMode(mode: MenuOpenButtonMode) {
-        this._menuOpenButtonMode = mode;
-        if (this._menuOpenButtonMode == MenuOpenButtonMode.flower) {
-            this._menuOpenButtonClass = "menu-open-button-flower";
-            this._menuItemClass = "menu-item-flower";
-        } else if (this._menuOpenButtonMode == MenuOpenButtonMode.row) {
-            this._menuOpenButtonClass = "menu-open-button-row";
-            this._menuItemClass = "menu-item-row";
+        if (this._menuOpenButtonMode != mode) {
+            this._menuOpenButtonMode = mode;
+            if (this._menuOpenButtonMode == MenuOpenButtonMode.flower) {
+                this._menuItemClass = "menu-item-flower";
+                this._menuOpenButtonClass = "menu-open-button-flower";
+            } else if (this._menuOpenButtonMode == MenuOpenButtonMode.row) {
+                this._menuItemClass = "menu-item-row-hidden";
+                this._menuOpenButtonClass = "menu-open-button-row";   
+                setTimeout(() => {
+                    this._menuItemClass = "menu-item-row";
+                }, 300);
+            }
         }
+    }
+
+    protected setMenuOpenButtonValue(value: any) {
+        this._menuOpenButtonValue = value;
     }
 }
