@@ -33,6 +33,10 @@
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
 }
 
+@keyframes fromEdgeAnimation {
+  100% {left: 0px; top: 0px;}
+}
+
 .menu-open-button-row {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #3498DB;
@@ -46,13 +50,20 @@
   transition-duration: 300ms;
   z-index: 2;
   cursor: pointer;
-  top:0;
+  /*top:0;
   bottom: 0;
   left: 0;
   right: 0;
   margin-top:10px;
-  margin-left:10px;
+  margin-left:10px;*/
+  top:50%;
+  bottom: 0;
+  left: 50%;
+  right: 0;
+  margin-top:-45px;
+  margin-left:-45px;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
+  animation: fromEdgeAnimation 3s;
 }
 
 .menu-open-button-row:active {
@@ -110,7 +121,10 @@
 }
 
 .menu-item-row-hidden {
-  display: none;
+  /*display: none;*/
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
 }
 
 .menu-open-checkbox:checked ~ .menu-open-button-flower ~ .menu-item-flower:nth-child(3) {
