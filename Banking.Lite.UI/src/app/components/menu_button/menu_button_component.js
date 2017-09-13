@@ -9,10 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var MenuOpenButtonMode;
+(function (MenuOpenButtonMode) {
+    MenuOpenButtonMode[MenuOpenButtonMode["flower"] = 0] = "flower";
+    MenuOpenButtonMode[MenuOpenButtonMode["row"] = 1] = "row";
+})(MenuOpenButtonMode || (MenuOpenButtonMode = {}));
 var MenuButtonComponent = (function () {
     function MenuButtonComponent() {
         this._menuOpenButtonClass = "menu-open-button-flower";
-        this._menuItemClass = "menu-item";
+        this._menuItemClass = "menu-item-flower";
+        this._menuOpenButtonMode = MenuOpenButtonMode.flower;
+        this._menuOpenButtonValue = false;
     }
     Object.defineProperty(MenuButtonComponent.prototype, "menuOpenButtonClass", {
         get: function () { return this._menuOpenButtonClass; },
@@ -21,6 +28,12 @@ var MenuButtonComponent = (function () {
     });
     Object.defineProperty(MenuButtonComponent.prototype, "menuItemClass", {
         get: function () { return this._menuItemClass; },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(MenuButtonComponent.prototype, "menuOpenButtonValue", {
+        get: function () { return this._menuOpenButtonValue; },
+        set: function (value) { this._menuOpenButtonValue = value; },
         enumerable: true,
         configurable: true
     });
@@ -37,11 +50,20 @@ var MenuButtonComponent = (function () {
         configurable: true
     });
     MenuButtonComponent.prototype.clickOpenButtonHandler = function (event) {
-        this._menuOpenButtonClass = "menu-open-button-flower";
-        // var ea = this._menuOpenButtonRef.nativeElement;
     };
     MenuButtonComponent.prototype.clickMenuItemHandler = function (item) {
-        this._menuOpenButtonClass = "menu-open-button-row";
+        this.setClassesByMode(MenuOpenButtonMode.row);
+    };
+    MenuButtonComponent.prototype.setClassesByMode = function (mode) {
+        this._menuOpenButtonMode = mode;
+        if (this._menuOpenButtonMode == MenuOpenButtonMode.flower) {
+            this._menuOpenButtonClass = "menu-open-button-flower";
+            this._menuItemClass = "menu-item-flower";
+        }
+        else if (this._menuOpenButtonMode == MenuOpenButtonMode.row) {
+            this._menuOpenButtonClass = "menu-open-button-row";
+            this._menuItemClass = "menu-item-row";
+        }
     };
     return MenuButtonComponent;
 }());
