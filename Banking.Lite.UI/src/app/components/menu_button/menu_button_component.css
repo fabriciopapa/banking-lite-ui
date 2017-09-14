@@ -24,13 +24,13 @@
     top: 50%;
     left: 50%;
     margin-top:-45px;
-    margin-left:-400px;
+    margin-left:-100vw;
   }
   80% {
     top: 0%;
     left: 0%;
     margin-top:0px;
-    margin-left:-200px;
+    margin-left:-100vw;
   }
   100% {
     top: 0px;
@@ -40,28 +40,37 @@
 
 @keyframes menuItemFlowerToRowAnimation {
   0% {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     top:50%;
     left:50%;
     margin-top:-35px;
     margin-left:-35px;
   }
   30% {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     top:50%;
     left:50%;
     margin-top:-35px;
     margin-left:-35px;
   }
   50% {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
     top:50%;
     left:50%;
     margin-top:-35px;
-    margin-left:-400px;
+    margin-left:-100vw;
   }
   80% {
     top:0%;
     left:0%;
     margin-top:0px;
-    margin-left:-200px;
+    margin-left:-100vw;
   }
   100% {
     top:0px;
@@ -100,11 +109,11 @@
   background-color: #3498DB;
 	border-bottom: 5px solid #2980B9;
   border-radius: 100%;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   position: absolute;
   text-align: center;
-  line-height: 80px;
+  line-height: 60px;
   transition-duration: 300ms;
   z-index: 2;
   cursor: pointer;
@@ -115,7 +124,7 @@
   margin-top:10px;
   margin-left:10px;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
-  animation: openButtonFlowerToRowAnimation 1.2s;
+  animation: openButtonFlowerToRowAnimation 1s;
 }
 
 .menu-item-flower {
@@ -146,23 +155,23 @@
   background-color: #3498DB;
 	border-bottom:2px solid #2980B9;
   border-radius: 100%;
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   position: absolute;
   text-align: center;
-  line-height: 70px;
+  line-height: 50px;
   transition: transform ease-out 200ms;
   cursor: pointer;
   top:0;
   bottom: 0;
   left: 0;
   right: 0;
-  margin-top:15px;
+  margin-top:20px;
   margin-left:15px;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
   animation-duration: 0.1s;
   animation-delay: 0.1s;
-  animation: menuItemFlowerToRowAnimation 1.2s;
+  animation: menuItemFlowerToRowAnimation 1s;
 }
 
 .menu-open-button-flower:active {
@@ -181,7 +190,7 @@
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
 }
 
-.menu-item-flower:active {
+/*.menu-item-flower:active {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   transform: translate3d(0, 0, 5);
   -webkit-transform: translate(0px, 5px);
@@ -195,7 +204,7 @@
   -webkit-transform: translate(0px, 5px);
 	border-bottom: 1px solid #2980B9;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
-}
+}*/
 
 .menu-open-checkbox:checked ~ .menu-open-button-flower ~ .menu-item-flower:nth-child(3) {
   transition-duration: 100ms;
@@ -231,43 +240,43 @@
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(3) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(0px, 85px, 0);
-    transform: translate3d(0px, 85px, 0);
+    -webkit-transform: translate3d(0px, calc(60px * 1), 0);
+    transform: translate3d(0px, calc(60px * 1), 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(4) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(0, 160px, 0);
-    transform: translate3d(0, 160px, 0);
+    -webkit-transform: translate3d(0, calc(60px * 2), 0);
+    transform: translate3d(0, calc(60px * 2), 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(5) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(0, 235px, 0);
-    transform: translate3d(0, 235px, 0);
+    -webkit-transform: translate3d(0, calc(60px * 3), 0);
+    transform: translate3d(0, calc(60px * 3), 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(6) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(0, 310px, 0);
-    transform: translate3d(0, 310px, 0);
+    -webkit-transform: translate3d(0, calc(60px * 4), 0);
+    transform: translate3d(0, calc(60px * 4), 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(7) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(0, 385px, 0);
-    transform: translate3d(0, 385px, 0);
+    -webkit-transform: translate3d(0, calc(60px * 5), 0);
+    transform: translate3d(0, calc(60px * 5), 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(8) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(0, 460px, 0);
-    transform: translate3d(0, 460px, 0);
+    -webkit-transform: translate3d(0, calc(60px * 6), 0);
+    transform: translate3d(0, calc(60px * 6), 0);
   }
 }
 
@@ -275,42 +284,42 @@
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(3) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(80px, 0, 0);
-    transform: translate3d(80px, 0, 0);
+    -webkit-transform: translate3d(calc(60px * 1), 0, 0);
+    transform: translate3d(calc(60px * 1), 0, 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(4) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(155px, 0, 0);
-    transform: translate3d(155px, 0, 0);
+    -webkit-transform: translate3d(calc(60px * 2), 0, 0);
+    transform: translate3d(calc(60px * 2), 0, 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(5) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(230px, 0, 0);
-    transform: translate3d(230px, 0, 0);
+    -webkit-transform: translate3d(calc(60px * 3), 0, 0);
+    transform: translate3d(calc(60px * 3), 0, 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(6) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(305px, 0, 0);
-    transform: translate3d(305px, 0, 0);
+    -webkit-transform: translate3d(calc(60px * 4), 0, 0);
+    transform: translate3d(calc(60px * 4), 0, 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(7) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(380px, 0, 0);
-    transform: translate3d(380px, 0, 0);
+    -webkit-transform: translate3d(calc(60px * 5), 0, 0);
+    transform: translate3d(calc(60px * 5), 0, 0);
   }
 
   .menu-open-checkbox:checked ~ .menu-open-button-row ~ .menu-item-row:nth-child(8) {
     -webkit-transition-duration: 200ms;
     transition-duration: 200ms;
-    -webkit-transform: translate3d(455px, 0, 0);
-    transform: translate3d(455px, 0, 0);
+    -webkit-transform: translate3d(calc(60px * 6), 0, 0);
+    transform: translate3d(calc(60px * 6), 0, 0);
   }
 }
