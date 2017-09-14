@@ -42,7 +42,7 @@ export class MenuButtonComponent {
     }
 
     protected clickMenuItemHandler(item: any) {
-        this._menuOpenButtonValue = false;
+        this.setMenuOpenButtonValue(false);
         this.setClassesByMode(MenuOpenButtonMode.row);
     }
 
@@ -53,11 +53,8 @@ export class MenuButtonComponent {
                 this._menuItemClass = "menu-item-flower";
                 this._menuOpenButtonClass = "menu-open-button-flower";
             } else if (this._menuOpenButtonMode == MenuOpenButtonMode.row) {
-                this._menuItemClass = "menu-item-row-hidden";
-                this._menuOpenButtonClass = "menu-open-button-row";   
-                setTimeout(() => {
-                    this._menuItemClass = "menu-item-row";
-                }, 300);
+                this._menuItemClass = "menu-item-row";
+                this._menuOpenButtonClass = "menu-open-button-row";
             }
         }
     }
