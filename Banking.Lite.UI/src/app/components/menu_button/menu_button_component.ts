@@ -38,12 +38,10 @@ export class MenuButtonComponent {
     constructor() {
     }
 
-    protected clickOpenButtonHandler(event: any) {
-    }
-
     protected clickMenuItemHandler(item: any) {
         this.setMenuOpenButtonValue(false);
         this.setClassesByMode(MenuOpenButtonMode.row);
+        this.unselectMenuItemsButIndex(item.index);
     }
 
     protected setClassesByMode(mode: MenuOpenButtonMode) {
@@ -61,5 +59,16 @@ export class MenuButtonComponent {
 
     protected setMenuOpenButtonValue(value: any) {
         this._menuOpenButtonValue = value;
+    }
+
+    protected unselectMenuItemsButIndex(index: number) {
+        if (this._menuItems != undefined) {
+            for (let i = 0; i < this._menuItems.length; i++) {
+                if (i != index)
+                    this._menuItems[i].selected = false;
+                else
+                    this._menuItems[i].selected = true;
+            }
+        }
     }
 }

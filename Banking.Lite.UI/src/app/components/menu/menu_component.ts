@@ -21,15 +21,16 @@ export class MenuComponent {
   }
 
   protected loadMenuOpenButton(): void {
-    this._menuOpenButton = { icon: "fa fa-shower"};
+    this._menuOpenButton = { icon: "fa fa-bars"};
   }
 
   protected loadMenuItems(): void {
-    this._menuItems.push({ icon: "fa fa-bar-chart"});
-    this._menuItems.push({ icon: "fa fa-plus"});
-    this._menuItems.push({ icon: "fa fa-heart"});
-    this._menuItems.push({ icon: "fa fa-envelope"});
-    this._menuItems.push({ icon: "fa fa-cog"});
-    this._menuItems.push({ icon: "fa fa-ellipsis-h"});
+    let index: number = -1;
+    this._menuItems.push({ index: ++index, icon: "fa fa-bar-chart", selected: false });
+    this._menuItems.push({ index: ++index, icon: "fa fa-plus", selected: false });
+    this._menuItems.push({ index: ++index, icon: "fa fa-heart", selected: false });
+    this._menuItems.push({ index: ++index, icon: "fa fa-envelope", selected: false });
+    this._menuItems.push({ index: ++index, icon: "fa fa-cog", selected: false });
+    this._menuItems.push({ index: ++index, icon: "fa fa-ellipsis-h", selected: false });
   }
 }

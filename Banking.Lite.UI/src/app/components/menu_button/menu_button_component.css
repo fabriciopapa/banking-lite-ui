@@ -7,6 +7,7 @@
     left: 50%;
     margin-top:-45px;
     margin-left:-45px;
+    font-size: 30px;
   }
   30% {
     width: 90px;
@@ -16,6 +17,7 @@
     left: 50%;
     margin-top:-45px;
     margin-left:-45px;
+    font-size: 30px;
   }
   50% {
     width: 90px;
@@ -25,6 +27,7 @@
     left: 50%;
     margin-top:-45px;
     margin-left:-100vw;
+    font-size: 30px;
   }
   80% {
     top: 0%;
@@ -87,12 +90,13 @@
   background-color: #3498DB;
 	border-bottom: 5px solid #2980B9;
   border-radius: 100%;
+  font-size: 30px;
   width: 90px;
   height: 90px;
   position: absolute;
   text-align: center;
   line-height: 90px;
-  transition-duration: 50ms;
+  /*transition-duration: 100ms;*/
   z-index: 2;
   cursor: pointer;
   top:50%;
@@ -150,6 +154,13 @@
   animation-delay: 0.5s;
 }
 
+.menu-item-flower.selected {
+  background-color: white;
+  border-bottom:2px solid gray;
+  box-shadow: 0.5px 0.5px 0.5px gray;
+  color: #3498DB;
+}
+
 .menu-item-row {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   background-color: #3498DB;
@@ -174,6 +185,13 @@
   animation: menuItemFlowerToRowAnimation 1s;
 }
 
+.menu-item-row.selected {
+  background-color: white;
+  border-bottom:2px solid gray;
+  box-shadow: 0.5px 0.5px 0.5px gray;
+  color: #3498DB;
+}
+
 .menu-open-button-flower:active {
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   transform: translate3d(0, 0, 5);
@@ -189,22 +207,6 @@
 	border-bottom: 1px solid #2980B9;
   box-shadow: 0.5px 0.5px 0.5px #2980B9;
 }
-
-/*.menu-item-flower:active {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  transform: translate3d(0, 0, 5);
-  -webkit-transform: translate(0px, 5px);
-	border-bottom: 1px solid #2980B9;
-  box-shadow: 0.5px 0.5px 0.5px #2980B9;
-}
-
-.menu-item-row:active {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  transform: translate3d(0, 0, 5);
-  -webkit-transform: translate(0px, 5px);
-	border-bottom: 1px solid #2980B9;
-  box-shadow: 0.5px 0.5px 0.5px #2980B9;
-}*/
 
 .menu-open-checkbox:checked ~ .menu-open-button-flower ~ .menu-item-flower:nth-child(3) {
   transition-duration: 100ms;

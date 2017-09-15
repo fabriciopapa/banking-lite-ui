@@ -27,15 +27,16 @@ var MenuComponent = (function () {
         configurable: true
     });
     MenuComponent.prototype.loadMenuOpenButton = function () {
-        this._menuOpenButton = { icon: "fa fa-shower" };
+        this._menuOpenButton = { icon: "fa fa-bars" };
     };
     MenuComponent.prototype.loadMenuItems = function () {
-        this._menuItems.push({ icon: "fa fa-bar-chart" });
-        this._menuItems.push({ icon: "fa fa-plus" });
-        this._menuItems.push({ icon: "fa fa-heart" });
-        this._menuItems.push({ icon: "fa fa-envelope" });
-        this._menuItems.push({ icon: "fa fa-cog" });
-        this._menuItems.push({ icon: "fa fa-ellipsis-h" });
+        var index = -1;
+        this._menuItems.push({ index: ++index, icon: "fa fa-bar-chart", selected: false });
+        this._menuItems.push({ index: ++index, icon: "fa fa-plus", selected: false });
+        this._menuItems.push({ index: ++index, icon: "fa fa-heart", selected: false });
+        this._menuItems.push({ index: ++index, icon: "fa fa-envelope", selected: false });
+        this._menuItems.push({ index: ++index, icon: "fa fa-cog", selected: false });
+        this._menuItems.push({ index: ++index, icon: "fa fa-ellipsis-h", selected: false });
     };
     return MenuComponent;
 }());

@@ -49,11 +49,10 @@ var MenuButtonComponent = (function () {
         enumerable: true,
         configurable: true
     });
-    MenuButtonComponent.prototype.clickOpenButtonHandler = function (event) {
-    };
     MenuButtonComponent.prototype.clickMenuItemHandler = function (item) {
         this.setMenuOpenButtonValue(false);
         this.setClassesByMode(MenuOpenButtonMode.row);
+        this.unselectMenuItemsButIndex(item.index);
     };
     MenuButtonComponent.prototype.setClassesByMode = function (mode) {
         if (this._menuOpenButtonMode != mode) {
@@ -70,6 +69,16 @@ var MenuButtonComponent = (function () {
     };
     MenuButtonComponent.prototype.setMenuOpenButtonValue = function (value) {
         this._menuOpenButtonValue = value;
+    };
+    MenuButtonComponent.prototype.unselectMenuItemsButIndex = function (index) {
+        if (this._menuItems != undefined) {
+            for (var i = 0; i < this._menuItems.length; i++) {
+                if (i != index)
+                    this._menuItems[i].selected = false;
+                else
+                    this._menuItems[i].selected = true;
+            }
+        }
     };
     return MenuButtonComponent;
 }());
