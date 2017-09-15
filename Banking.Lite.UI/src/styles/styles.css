@@ -14,7 +14,7 @@ html, body {
   -webkit-text-size-adjust: 100%;
 }
 
-.container {
+.spinner-container {
   width: 100%;
   height: 100%;
   margin: auto;
@@ -25,10 +25,10 @@ html, body {
   bottom: 0;
   right: 0;
   position: relative;
-  color: #3498DB;
+  color: rgb(0, 129, 197);
 }
 
-.mesina-logo {
+.logo {
   background-image: url('../../../resources/images/logo_loading-big.png');
   width: 70px;
   height: 70px;

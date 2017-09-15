@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var LoginComponent = (function () {
-    function LoginComponent() {
+var LogInComponent = (function () {
+    function LogInComponent() {
     }
-    return LoginComponent;
+    return LogInComponent;
 }());
-LoginComponent = __decorate([
+LogInComponent = __decorate([
     core_1.Component({
         selector: 'lt-login',
         changeDetection: core_1.ChangeDetectionStrategy.OnPush,
@@ -22,6 +22,6 @@ LoginComponent = __decorate([
         styleUrls: ["./login_component.css"]
     }),
     __metadata("design:paramtypes", [])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
+], LogInComponent);
+exports.LogInComponent = LogInComponent;
 //# sourceMappingURL=login_component.js.map

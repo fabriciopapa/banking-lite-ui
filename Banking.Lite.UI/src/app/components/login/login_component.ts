@@ -7,7 +7,7 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ["./login_component.css"]
 })
 
-export class LoginComponent { 
+export class LogInComponent { 
 
   constructor() {
   }
