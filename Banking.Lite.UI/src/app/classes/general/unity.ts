@@ -1,16 +1,16 @@
 var registry = new Map<string, any>();
 
-if (!window.icb) {
-    window.icb = {
+if (!window.windowExtended) {
+    window.windowExtended = {
         unity: {}
     };
 }
 
 if (!registry) {
-    if (!window.icb.unity.unityRegistry) {
-        window.icb.unity.unityRegistry = new Map<string, any>();
+    if (!window.windowExtended.unity.unityRegistry) {
+        window.windowExtended.unity.unityRegistry = new Map<string, any>();
     }
-    registry = window.icb.unity.unityRegistry;
+    registry = window.windowExtended.unity.unityRegistry;
 }
 
 export function registerType(name: string, component: any): any {

@@ -1,8 +1,8 @@
-interface ICB {
+interface WindowExtended {
     unity: any;
 }
 
 interface Window {
     contextInfo: any;
-    icb: ICB;
+    windowExtended: WindowExtended;
 }
